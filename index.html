@@ -1,101 +1,267 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>My first ICT code</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Siyam</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Optional: Add a stylized font like Merriweather or permanent marker from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Playfair+Display:ital,wght@1,700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-<h1>Hello, Everyone!<h1>
-<h2>siyam islam</h2>
-<h6> hi hello</h6>
-<img src="siyam.jpeg"alt="siyam">
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="logo">SIYAM</div>
+        <nav>
+            <ul>
+                <li><a href="#shop">SHOP</a></li>
+                <li><a href="#music">MUSIC</a></li>
+                <li><a href="#videos">VIDEOS</a></li>
+                <li><a href="#tour">TOUR</a></li>
+                <li><a href="#signup">SIGN UP</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero / Main Showcase Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2 class="main-title-bg">SIYAM</h2>
+            <h1 class="main-title-glow">KONNAKOL</h1>
+            <p class="subtitle">- OUT NOW -</p>
+            <a href="#" class="cta-btn">STREAM / DOWNLOAD</a>
+        </div>
+    </section>
+
+    <!-- Product Grid Section -->
+    <section class="products-section" id="shop">
+        <div class="product-grid">
+            
+            <!-- Item 1 -->
+            <div class="product-card">
+                <div class="img-container">
+                    <img src="https://via.placeholder.com/300x300/111/00ffaa?text=Deluxe+Vinyl" alt="Konnakol Digital Deluxe">
+                </div>
+                <h3>KONNAKOL DIGITAL DELUXE</h3>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="product-card">
+                <div class="img-container">
+                    <img src="https://via.placeholder.com/300x300/111/00ffaa?text=Exclusive+Vinyl" alt="Store Exclusive First">
+                </div>
+                <h3>STORE EXCLUSIVE: FIRST</h3>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="product-card">
+                <div class="img-container">
+                    <img src="https://via.placeholder.com/300x300/111/00ffaa?text=Limited+Edition" alt="Limited Edition Cover">
+                </div>
+                <h3>LIMITED EDITION COVER + 5TH</h3>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="product-card">
+                <div class="img-container">
+                    <img src="https://via.placeholder.com/300x300/111/00ffaa?text=CD+Album" alt="Konnakol CD">
+                </div>
+                <h3>KONNAKOL CD</h3>
+            </div>
+
+        </div>
+    </section>
+
 </body>
 </html>
-package com.mizbahul.portfolio.controller;
-
-import com.mizbahul.portfolio.model.UserProfile;
-import com.mizbahul.portfolio.service.ProfileService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
-@RestController
-@RequestMapping("/api/v1/profile")
-@CrossOrigin(origins = "*") // Allows your frontend to connect easily
-public class ProfileController {
-
-    private final ProfileService profileService;
-
-    @Autowired
-    public ProfileController(ProfileService profileService) {
-        this.profileService = profileService;
-    }
-
-    @GetMapping
-    public ResponseEntity<UserProfile> getProfile() {
-        UserProfile profile = profileService.getProfileData();
-        return ResponseEntity.ok(profile);
-    }
-
-    @PutMapping("/update")
-    public ResponseEntity<UserProfile> updateProfile(@RequestBody UserProfile updatedProfile) {
-        UserProfile savedProfile = profileService.updateProfileData(updatedProfile);
-        return ResponseEntity.ok(savedProfile);
-    }
+/* Reset basic rules */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-      package com.mizbahul.portfolio.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
 
-@Entity
-public class UserProfile {
+/* Header & Navigation Layout */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 60px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+header .logo {
+    font-family: 'Cinzel', serif;
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #ffffff;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+/* Light blue tint color on hover for navigation links */
+nav ul li a:hover {
+    color: #a4dbff; 
+}
+
+/* Hero Section Formatting */
+.hero {
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding-top: 100px;
+}
+
+.hero-content {
+    position: relative;
+}
+
+/* Background text overlay styling */
+.main-title-bg {
+    font-family: 'Cinzel', serif;
+    font-size: 90px;
+    color: rgba(255, 255, 255, 0.07);
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    letter-spacing: 10px;
+}
+
+/* Neon Glowing Main Text styling */
+.main-title-glow {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 72px;
+    color: #3fa37b; /* Darker mint green base */
+    text-shadow: 0 0 15px rgba(63, 163, 123, 0.6), 0 0 30px rgba(63, 163, 123, 0.3);
+    position: relative;
+    z-index: 2;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 32px;
+    margin: 20px 0;
+    letter-spacing: 2px;
+}
+
+/* Stream / Download Button styling */
+.cta-btn {
+    display: inline-block;
+    padding: 12px 35px;
+    border: 1px solid #3fa37b;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 2px;
+    background: transparent;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.cta-btn:hover {
+    background-color: #3fa37b;
+    color: #000000;
+    box-shadow: 0 0 15px rgba(63, 163, 123, 0.5);
+}
+
+/* Product Section & Showcase Grid */
+.products-section {
+    padding: 20px 60px 80px 60px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.product-card {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.img-container {
+    background-color: #000;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-container img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.product-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #ffffff;
+    margin-top: 15px;
+}
+
+/* Responsive adjustments for smaller windows */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
     
-    private String name;
-    private String title;
-    private String bio;
-    private String vehicleReferenceNumber; // Added as per your request placeholder
-
-    // Default Constructor
-    public UserProfile() {}
-
-    // Parameterized Constructor
-    public UserProfile(String name, String title, String bio, String vehicleReferenceNumber) {
-        this.name = name;
-        this.title = title;
-        this.bio = bio;
-        this.vehicleReferenceNumber = vehicleReferenceNumber;
+    .main-title-bg {
+        font-size: 60px;
+        top: -35px;
     }
-
-    // Getters and Setters
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
-
-    public String getTitle() { return title; }
-    public void setTitle(String title) { this.title = title; }
-
-    public String getBio() { return bio; }
-    public void setBio(String bio) { this.bio = bio; }
-
-    public String getVehicleReferenceNumber() { return vehicleReferenceNumber; }
-    public void setVehicleReferenceNumber(String vehicleReferenceNumber) { this.vehicleReferenceNumber = vehicleReferenceNumber; }
-}
-      package com.mizbahul.portfolio.repository;
-
-import com.mizbahul.portfolio.model.UserProfile;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-
-@Repository
-public interface ProfileRepository extends JpaRepository<UserProfile, Long> {
-    // Finds the main profile by name
-    UserProfile findByName(String name);
+    
+    .main-title-glow {
+        font-size: 50px;
+    }
+    
+    .subtitle {
+        font-size: 24px;
+    }
 }
