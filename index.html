@@ -3,116 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Siyam - Official Website</title>
-    <!-- Premium Google Fonts Integration -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Playfair+Display:ital,wght@1,500;1,700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>SIYAM - Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header / Global Navigation -->
-    <header class="site-header">
-        <div class="logo-container">
-            <a href="#" class="logo-text">SIYAM</a>
-        </div>
-        <nav class="main-navigation">
+    <header class="store-header">
+        <a href="#" class="logo">SIYAM<span class="dot">.</span></a>
+        <nav class="nav-links">
             <ul>
+                <li><a href="#" class="active">HOME</a></li>
                 <li><a href="#shop">SHOP</a></li>
-                <li><a href="#music">MUSIC</a></li>
-                <li><a href="#videos">VIDEOS</a></li>
-                <li><a href="#tour">TOUR</a></li>
-                <li><a href="#signup" class="nav-special">SIGN UP</a></li>
             </ul>
         </nav>
+        <div class="header-actions">
+            <a href="#" class="action-btn">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="badge">0</span>
+            </a>
+        </div>
     </header>
 
-    <!-- Main Content Wrapper -->
     <main>
-        
-        <!-- Hero Section featuring Text & Your Custom Image -->
-        <section class="hero-container">
-            <div class="hero-grid">
+        <section class="hero-banner">
+            <div class="hero-bg-image">
+                <img src="your-profile-image.jpg" alt="Hero Image" class="hero-main-img">
+                <div class="overlay"></div>
+            </div>
+            <div class="hero-text-content">
+                <h1 class="main-title">THE KONNAKOL COLLECTION</h1>
+                <a href="#shop" class="btn btn-solid">SHOP NOW</a>
+            </div>
+        </section>
+
+        <section class="products-marketplace" id="shop">
+            <div class="product-matrix">
                 
-                <!-- Left Column: Typography & Call to Actions -->
-                <div class="hero-text-side">
-                    <div class="title-wrapper">
-                        <span class="bg-watermark">SIYAM</span>
-                        <h1 class="glow-title">KONNAKOL</h1>
+                <div class="store-card">
+                    <div class="product-image-wrapper">
+                        <img src="https://via.placeholder.com/400x450/0f0f0f/3fa37b?text=PRODUCT+1" alt="Product">
                     </div>
-                    <p class="release-status">- OUT NOW -</p>
-                    <div class="action-box">
-                        <a href="#shop" class="btn btn-primary">STREAM / DOWNLOAD</a>
+                    <div class="product-details">
+                        <h3 class="product-title">Konnakol Digital Deluxe Vinyl</h3>
+                        <div class="price-box"><span class="current-price">$36.00</span></div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
                     </div>
                 </div>
 
-                <!-- Right Column: YOUR IMAGE ADDED HERE -->
-                <div class="hero-image-side">
-                    <div class="image-frame">
-                        <!-- 
-                          Change "your-profile-image.jpg" to your actual image file name.
-                          Make sure the image is in the same folder as this index.html file!
-                        -->
-                        <img src="your-profile-image.jpg" alt="Mizbahul Islam Siam Portfolio Layout" class="profile-img">
-                        <div class="image-overlay-glow"></div>
+                <div class="store-card">
+                    <div class="product-image-wrapper">
+                        <img src="https://via.placeholder.com/400x450/0f0f0f/3fa37b?text=PRODUCT+2" alt="Product">
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-title">Siyam Signature Neon Hoodie</h3>
+                        <div class="price-box"><span class="current-price">$65.00</span></div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
                     </div>
                 </div>
 
             </div>
         </section>
-
-        <!-- Product Grid Showcase Section -->
-        <section class="showcase-section" id="shop">
-            <h2 class="section-title">EXCLUSIVE RELEASES</h2>
-            
-            <div class="product-grid">
-                <!-- Product Card 1 -->
-                <article class="product-card">
-                    <div class="media-holder">
-                        <img src="https://via.placeholder.com/400x400/0d0d0d/3fa37b?text=DIGITAL+DELUXE" alt="Konnakol Digital Deluxe">
-                    </div>
-                    <header class="card-info">
-                        <h3>KONNAKOL DIGITAL DELUXE</h3>
-                    </header>
-                </article>
-
-                <!-- Product Card 2 -->
-                <article class="product-card">
-                    <div class="media-holder">
-                        <img src="https://via.placeholder.com/400x400/0d0d0d/3fa37b?text=STORE+EXCLUSIVE" alt="Store Exclusive First">
-                    </div>
-                    <header class="card-info">
-                        <h3>STORE EXCLUSIVE: FIRST</h3>
-                    </header>
-                </article>
-
-                <!-- Product Card 3 -->
-                <article class="product-card">
-                    <div class="media-holder">
-                        <img src="https://via.placeholder.com/400x400/0d0d0d/3fa37b?text=LIMITED+EDITION" alt="Limited Edition Cover">
-                    </div>
-                    <header class="card-info">
-                        <h3>LIMITED EDITION COVER + 5TH</h3>
-                    </header>
-                </article>
-
-                <!-- Product Card 4 -->
-                <article class="product-card">
-                    <div class="media-holder">
-                        <img src="https://via.placeholder.com/400x400/0d0d0d/3fa37b?text=ALBUM+CD" alt="Konnakol CD">
-                    </div>
-                    <header class="card-info">
-                        <h3>KONNAKOL CD</h3>
-                    </header>
-                </article>
-            </div>
-        </section>
-
     </main>
 
-    <!-- Footer System -->
-    <footer class="site-footer">
+    <footer class="store-footer">
         <p>&copy; 2026 SIYAM. All Rights Reserved.</p>
     </footer>
 
