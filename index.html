@@ -3,82 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIYAM - Store</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>SIYAM. | Official Store & Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Main Navigation Header -->
-    <header class="store-header">
-        <div class="logo-area">
-            <a href="#" class="logo">SIYAM<span class="dot">.</span></a>
-        </div>
-        <nav class="nav-links">
-            <ul>
-                <li><a href="#" class="active">HOME</a></li>
-                <li><a href="#shop">SHOP</a></li>
-            </ul>
-        </nav>
-        <div class="header-actions">
-            <a href="#" class="action-btn">
-                <i class="fas fa-shopping-bag"></i>
-                <span class="badge">0</span>
-            </a>
+    <!-- Header Section (Centered) -->
+    <header>
+        <div class="header-container">
+            <h1 class="site-title">SIYAM.</h1>
+            <p class="site-subtitle">THE KONNAKOL COLLECTION</p>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#shop">Shop</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon" onclick="toggleCart()">
+                🛍️ <span id="cart-count">0</span>
+            </div>
         </div>
     </header>
 
+    <!-- Main Content Section -->
     <main>
-        <!-- Hero Banner Section -->
-        <section class="hero-banner">
-            <div class="hero-bg-image">
-                <!-- If you don't have an image uploaded yet, this will gracefully fall back to a clean dark layout -->
-                <img src="your-profile-image.jpg" alt="Hero Image" class="hero-main-img" onerror="this.style.display='none'">
-                <div class="overlay"></div>
-            </div>
-            <div class="hero-text-content">
-                <h1 class="main-title">THE KONNAKOL COLLECTION</h1>
-                <a href="#shop" class="btn btn-solid">SHOP NOW</a>
+        
+        <!-- Hero Showcase -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>Motion Graphics & Visual Arts</h2>
+                <p>High-energy animations, futuristic neon loops, and structural design concepts.</p>
+                <a href="#shop" class="btn-primary">Explore Store</a>
             </div>
         </section>
 
-        <!-- Product Grid Marketplace -->
-        <section class="products-marketplace" id="shop">
-            <div class="product-matrix">
-                
+        <!-- Shop Section -->
+        <section id="shop" class="shop-section">
+            <h3 class="section-title">Featured Products</h3>
+            <div class="product-grid">
                 <!-- Product 1 -->
-                <div class="store-card">
-                    <div class="product-image-wrapper">
-                        <img src="https://via.placeholder.com/400x450/0f0f0f/3fa37b?text=KONNAKOL+VINYL" alt="Product">
+                <div class="product-card">
+                    <div class="product-img-placeholder">
+                        <!-- আপনার ইমেজ ফোল্ডার অনুযায়ী পাথ ঠিক করে নিবেন -->
+                        <img src="images/vinyl.png" alt="Konnakol Digital Deluxe Vinyl" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="fallback-text" style="display:none;">💿 Vinyl Artwork</div>
                     </div>
-                    <div class="product-details">
-                        <h3 class="product-title">Konnakol Digital Deluxe Vinyl</h3>
-                        <div class="price-box"><span class="current-price">$36.00</span></div>
-                        <button class="add-to-cart-btn">Add to Cart</button>
-                    </div>
+                    <h4>Konnakol Digital Deluxe Vinyl</h4>
+                    <p class="price">$36.00</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Konnakol Digital Deluxe Vinyl', 36)">Add to Cart</button>
                 </div>
 
                 <!-- Product 2 -->
-                <div class="store-card">
-                    <div class="product-image-wrapper">
-                        <img src="https://via.placeholder.com/400x450/0f0f0f/3fa37b?text=NEON+HOODIE" alt="Product">
+                <div class="product-card">
+                    <div class="product-img-placeholder">
+                        <img src="images/hoodie.png" alt="Siyam Signature Neon Hoodie" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="fallback-text" style="display:none;">🧥 Neon Hoodie</div>
                     </div>
-                    <div class="product-details">
-                        <h3 class="product-title">Siyam Signature Neon Hoodie</h3>
-                        <div class="price-box"><span class="current-price">$65.00</span></div>
-                        <button class="add-to-cart-btn">Add to Cart</button>
-                    </div>
+                    <h4>Siyam Signature Neon Hoodie</h4>
+                    <p class="price">$65.00</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Siyam Signature Neon Hoodie', 65)">Add to Cart</button>
                 </div>
-
             </div>
         </section>
+
+        <!-- Portfolio Showcase (Page বোরো করার জন্য নতুন সেকশন) -->
+        <section id="portfolio" class="portfolio-section">
+            <h3 class="section-title">Creative Works</h3>
+            <div class="portfolio-container">
+                <div class="portfolio-item">
+                    <h4>Motion Graphics & Adobe Stock</h4>
+                    <p>Creating high-energy video loops, "Fiery Saber" effects, and "Neon Tunnel" animations for digital marketplaces.</p>
+                </div>
+                <div class="portfolio-item">
+                    <h4>Architectural Space Planning</h4>
+                    <p>Specialized in modern residential layouts, L-shaped floor plans, and custom 90-degree box window structures.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <h3 class="section-title">About Me</h3>
+            <div class="about-content">
+                <p>I am a digital creator, motion designer, and structural planner. Combining the rhythmic depth of Konnakol with futuristic neon visuals and precise civil design, my work bridges the gap between technology and art.</p>
+            </div>
+        </section>
+
     </main>
 
-    <!-- Footer Platform -->
-    <footer class="store-footer">
-        <p>&copy; 2026 SIYAM. All Rights Reserved.</p>
+    <!-- Footer Section (Centered & Bottom) -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 SIYAM. All Rights Reserved.</p>
+            <p class="footer-sub">Designed for the Future</p>
+        </div>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
