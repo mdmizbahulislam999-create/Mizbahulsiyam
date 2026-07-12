@@ -5,6 +5,24 @@ function addToCart(productName, price) {
     cartCount++;
     document.getElementById('cart-count').innerText = cartCount;
     
+  // মেনু হাইড এবং শো করার ফাংশন
+function toggleMenu() {
+    var menu = document.getElementById("menuList");
+    menu.classList.toggle("show-menu");
+}
+
+// ইউজার যদি মেনুর বাইরে কোথাও ক্লিক করে, তবে মেনু অটো বন্ধ হয়ে যাবে
+window.onclick = function(event) {
+    if (!event.target.matches('.menu-btn')) {
+        var dropdowns = document.getElementsByClassName("menu-list");
+        for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show-menu')) {
+                openDropdown.classList.remove('show-menu');
+            }
+        }
+    }
+}
     // একটি সুন্দর পপ-আপ অ্যালার্ট
     alert(`${productName} has been added to your cart! Total items: ${cartCount}`);
 }
